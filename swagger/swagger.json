@@ -1,0 +1,139 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "title": "SGA MID - Plan de estudios",
+        "description": "Microservicio MID del SGA que complementa los endpoints para el plan de estudios.",
+        "version": "1.0.0",
+        "contact": {},
+        "license": {
+            "name": "Apache 2.0",
+            "url": "http://www.apache.org/licenses/LICENSE-2.0.html"
+        }
+    },
+    "basePath": "/v1",
+    "paths": {
+        "/plan-estudios/": {
+            "post": {
+                "tags": [
+                    "plan-estudios"
+                ],
+                "description": "create study plan",
+                "operationId": "PlanEstudiosController.PostBaseStudyPlan",
+                "parameters": [
+                    {
+                        "in": "body",
+                        "name": "body",
+                        "description": "body for Plan_estudios content",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/{}"
+                        }
+                    }
+                ],
+                "responses": {
+                    "201": {
+                        "description": "{}"
+                    },
+                    "403": {
+                        "description": "body is empty"
+                    }
+                }
+            }
+        },
+        "/plan-estudios/dependencias-vinculacion-terceros/{tercero_id}": {
+            "get": {
+                "tags": [
+                    "plan-estudios"
+                ],
+                "description": "get plan de estudio por DependenciaId de vinculación de tercero, verificando cargo",
+                "operationId": "PlanEstudiosController.GetPlanPorDependenciaVinculacionTercero",
+                "parameters": [
+                    {
+                        "in": "body",
+                        "name": "body",
+                        "description": "body Datos del plan de estudio content",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/{}"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "{}"
+                    },
+                    "400": {
+                        "description": "body is empty"
+                    }
+                }
+            }
+        },
+        "/plan-estudios/generador-documentos-malla": {
+            "post": {
+                "tags": [
+                    "plan-estudios"
+                ],
+                "description": "Genera un documento PDF del plan de estudio",
+                "operationId": "PlanEstudiosController.PostGenerarDocumentoPlanEstudio",
+                "parameters": [
+                    {
+                        "in": "body",
+                        "name": "body",
+                        "description": "body Datos del plan de estudio content",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/{}"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "{}"
+                    },
+                    "400": {
+                        "description": "body is empty"
+                    }
+                }
+            }
+        },
+        "/plan-estudios/{plan_id}/estructura-visualizacion": {
+            "get": {
+                "tags": [
+                    "plan-estudios"
+                ],
+                "description": "get study plan data to the visualization",
+                "operationId": "PlanEstudiosController.GetStudyPlanVisualization",
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "id_plan",
+                        "description": "Id del plan de estudio",
+                        "required": true,
+                        "type": "integer",
+                        "format": "int64"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "{}"
+                    },
+                    "404": {
+                        "description": "not found resource"
+                    }
+                }
+            }
+        }
+    },
+    "definitions": {
+        "{}": {
+            "title": "{}",
+            "type": "object"
+        }
+    },
+    "tags": [
+        {
+            "name": "plan-estudios",
+            "description": "PlanEstudiosController operations for Plan_estudios\n"
+        }
+    ]
+}
