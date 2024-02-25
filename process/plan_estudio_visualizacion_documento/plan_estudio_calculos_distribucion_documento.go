@@ -1,7 +1,7 @@
 package plan_estudio_visualizacion_documento
 
 import (
-	"github.com/udistrital/sga_mid_plan_estudios/utils"
+	"github.com/udistrital/sga_plan_estudio_mid/utils"
 )
 
 /*

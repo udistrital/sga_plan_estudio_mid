@@ -4,8 +4,8 @@ import (
 	"fmt"
 	"github.com/astaxie/beego"
 	"github.com/phpdave11/gofpdf"
-	"github.com/udistrital/sga_mid_plan_estudios/helpers"
-	"github.com/udistrital/sga_mid_plan_estudios/utils"
+	"github.com/udistrital/sga_plan_estudio_mid/helpers"
+	"github.com/udistrital/sga_plan_estudio_mid/utils"
 	"sort"
 )
 
