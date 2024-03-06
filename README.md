@@ -11,6 +11,7 @@ adicionales para generar documentos PDF requeridos por el SGA.
 * [Docker](https://docs.docker.com/engine/install/ubuntu/)
 * [Docker Compose](https://docs.docker.com/compose/)
 
+
 ### Variables de Entorno
 ```shell
 SGA_PLAN_ESTUDIO_MID_HTTP_PORT: [Puerto de ejecución API]
