@@ -13,12 +13,12 @@ adicionales para generar documentos PDF requeridos por el SGA.
 
 ### Variables de Entorno
 ```shell
-SGA_MID_PLAN_ESTUDIOS_HTTP_PORT: [Puerto de ejecución API]
+SGA_PLAN_ESTUDIO_MID_HTTP_PORT: [Puerto de ejecución API]
 SGA_MID_STATIC_PATH: [Ruta de imágenes usadas en la generación de recibos de pago]
 ESPACIOS_ACADEMICOS_SERVICE: [Servicio API ESPACIOS ACADEMICOS]
 HOMOLOGACION_DEPENDENCIA_SERVICE: [Servicio API HOMOLOGACION DEPENDENCIA]
 PARAMETRO_SERVICE: [Servicio API PARAMETRO]
-PLAN_ESTUDIOS_SERVICE: [Servicio API PARAMETRO]
+PLAN_ESTUDIO_SERVICE: [Servicio API PARAMETRO]
 OIKOS_SERVICE: [Servicio API OIKOS]
 TERCEROS_SERVICE: [Servicio API TERCEROS]
 ```
@@ -37,6 +37,12 @@ git pull origin develop && git checkout develop
 
 # 4. alimentar todas las variables de entorno que utiliza el proyecto.
 SGA_MID_PLAN_ESTUDIOS_HTTP_PORT=8080 RULER_URL=127.0.0.1:27017 SGA_MID_SOME_VARIABLE=some_value bee run
+
+# 5. Ejecutar comandos para descargar dependencias
+go mod init && go mod tidy
+
+# 6. Ejecutar proyecto
+bee run -downdoc=true -gendoc=true
 ```
 
 ### Ejecución Dockerfile

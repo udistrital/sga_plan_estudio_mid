@@ -1,7 +1,7 @@
 lastupdate.tmp
 .vscode/
 .idea/
-sga_mid
+sga_plan_estudio_mid
 main
 .scannerwork/
 swagger/*.png
@@ -15,7 +15,7 @@ swagger/fonts/
 swagger/images/
 swagger/lang/
 swagger/lib/
-sga_mid.exe
+sga_plan_estudio_mid.exe
 go.mod
 go.sum
 
