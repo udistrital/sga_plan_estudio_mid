@@ -1,16 +1,16 @@
 package helpers
 
 import (
-	"bytes"
-	"encoding/json"
-	"github.com/astaxie/beego"
-	"github.com/astaxie/beego/logs"
-	"io"
-	"net/http"
+	//"bytes"
+	//"encoding/json"
+	//"github.com/astaxie/beego"
+	//"github.com/astaxie/beego/logs"
+	//"io"
+	//"net/http"
 	"reflect"
 )
 
-func SendJson(url string, trequest string, target interface{}, datajson interface{}) error {
+/*func SendJson(url string, trequest string, target interface{}, datajson interface{}) error {
 	b := new(bytes.Buffer)
 	if datajson != nil {
 		if err := json.NewEncoder(b).Encode(datajson); err != nil {
@@ -51,7 +51,7 @@ func SendJson(url string, trequest string, target interface{}, datajson interfac
 
 	req.Header.Set("Authorization", "")
 	req.Header.Set("Content-Type", "application/json; charset=UTF-8")
-	req.Header.Set("accept", "*/*")
+	req.Header.Set("accept", "*")
 
 	r, err := client.Do(req)
 	if err != nil {
@@ -65,7 +65,7 @@ func SendJson(url string, trequest string, target interface{}, datajson interfac
 	}()
 
 	return json.NewDecoder(r.Body).Decode(target)
-}
+}*/
 
 func DefaultTo[T any](value, defaultValue T) T {
 	if reflect.ValueOf(value).IsZero() {

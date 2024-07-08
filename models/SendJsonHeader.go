@@ -12,7 +12,7 @@ var global *context.Context
 func GetHeader() (ctx *context.Context) {
 	return global
 }
-func GetJson(urlp string, target interface{}) error {
+/*func GetJson(urlp string, target interface{}) error {
 
 	req, err := http.NewRequest("GET", urlp, nil)
 	if err != nil {
@@ -48,4 +48,4 @@ func GetJson(urlp string, target interface{}) error {
 
 	defer resp.Body.Close()
 	return json.NewDecoder(resp.Body).Decode(target)
-}
+}*/
