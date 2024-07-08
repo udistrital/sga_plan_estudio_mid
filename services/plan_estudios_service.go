@@ -242,7 +242,7 @@ func createStudyPlan(studyPlanBody map[string]interface{}) (map[string]interface
 	var newStudyPlan map[string]interface{}
 	urlStudyPlan := "http://" + beego.AppConfig.String("PlanEstudioService") +
 		"plan_estudio"
-	if errNewPlan := helpers.SendJson(urlStudyPlan, "POST", &newStudyPlan, studyPlanBody); errNewPlan == nil {
+	if errNewPlan := request.SendJson2(urlStudyPlan, "POST", &newStudyPlan, studyPlanBody); errNewPlan == nil {
 		return newStudyPlan["Data"].(map[string]interface{}), nil
 	} else {
 		return newStudyPlan, fmt.Errorf("PlanEstudiosService Error creando plan de estudios")
